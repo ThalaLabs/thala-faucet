@@ -58,7 +58,7 @@ export default function Home() {
             </Heading>
           </Flex>
         )}
-        {connected && <ClaimCoins />}
+        <ClaimCoins />
       </Container>
     </>
   );
@@ -129,7 +129,7 @@ function ClaimCoins() {
 }
 
 function Claim({ coin }: { coin: CoinInfo }) {
-  const { signAndSubmitTransaction } = useWallet();
+  const { connected, signAndSubmitTransaction } = useWallet();
   const toast = useToast();
   const [txnPending, setTxnPending] = useState(false);
 
@@ -174,7 +174,7 @@ function Claim({ coin }: { coin: CoinInfo }) {
   }
 
   return (
-    <Button isLoading={txnPending} onClick={claim}>
+    <Button isLoading={txnPending} disabled={!connected} onClick={claim}>
       Claim {AMOUNT} {coin.symbol}
     </Button>
   );
