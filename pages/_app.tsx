@@ -7,6 +7,7 @@ import { MartianWallet } from "@martianwallet/aptos-wallet-adapter";
 import { RiseWallet } from "@rise-wallet/wallet-adapter";
 import { TrustWallet } from "@trustwallet/aptos-wallet-adapter";
 import { SpikaWallet } from "@spika/aptos-plugin";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         autoConnect={true}
       >
         <Component {...pageProps} />
+        <Analytics />
       </AptosWalletAdapterProvider>
     </ChakraProvider>
   );
