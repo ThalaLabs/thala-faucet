@@ -35,7 +35,6 @@ interface CoinInfo {
 }
 
 export default function Home() {
-  const { connected } = useWallet();
   return (
     <>
       <Head>
@@ -50,14 +49,6 @@ export default function Home() {
           <Spacer />
           <ConnectWalletModal />
         </Flex>
-        {!connected && (
-          <Flex>
-            <Spacer />
-            <Heading size="md" mt="10">
-              connect to claim ☝️
-            </Heading>
-          </Flex>
-        )}
         <ClaimCoins />
       </Container>
     </>
@@ -71,7 +62,7 @@ function ConnectWalletModal() {
     <>
       {!connected ? (
         <Button onClick={onOpen} mt="4">
-          Connect Wallet
+          Connect to claim 💡
         </Button>
       ) : (
         <Button onClick={disconnect} mt="4">
