@@ -1,0 +1,18 @@
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* For Mozilla */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Actor", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0.2em;
+}

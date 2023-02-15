@@ -9,9 +9,12 @@ import { TrustWallet } from "@trustwallet/aptos-wallet-adapter";
 import { SpikaWallet } from "@spika/aptos-plugin";
 import { Analytics } from "@vercel/analytics/react";
 
+import "../styles/globals.css";
+import theme from "../styles/theme";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <AptosWalletAdapterProvider
         plugins={[
           new PetraWallet(),
