@@ -128,7 +128,7 @@ function Claim({ coin }: { coin: CoinInfo }) {
     const payload: Types.TransactionPayload = {
       type: "entry_function_payload",
       function: `${TEST_COINS_ACCOUNT}::test_coins::mint_coin`,
-      type_arguments: [`${TEST_COINS_ACCOUNT}::test_coins::${coin.symbol}`],
+      type_arguments: [`${TEST_COINS_ACCOUNT}::test_coins::${coin.symbol.toUpperCase()}`],
       arguments: [(AMOUNT * 10 ** coin.decimals).toFixed(0)],
     };
     try {
