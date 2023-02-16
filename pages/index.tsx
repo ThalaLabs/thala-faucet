@@ -23,10 +23,10 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
 
 const TEST_COINS_ACCOUNT =
-  "0xf626feab4559a8b94356044303cfd165d89d79b2181a68ad43bcd97504edde06";
+  "0x03c27315fb69ba6e4b960f1507d1cefcc9a4247869f26a8d59d6b7869d23782c";
 const TESTNET_FULLNODE = "https://fullnode.testnet.aptoslabs.com";
 const client = new AptosClient(TESTNET_FULLNODE);
-const AMOUNT = 10000;
+const AMOUNT = 1000;
 
 interface CoinInfo {
   name: string;
@@ -46,7 +46,7 @@ export default function Home() {
       <Container>
         <Flex align="center">
           <Heading color="white" fontSize="20px">
-            Thala Faucet: Claim MANY test coins
+            Thala Faucet: Claim test coins
           </Heading>
           <Spacer />
           <ConnectWalletModal />
@@ -130,7 +130,9 @@ function Claim({ coin }: { coin: CoinInfo }) {
     const payload: Types.TransactionPayload = {
       type: "entry_function_payload",
       function: `${TEST_COINS_ACCOUNT}::test_coins::mint_coin`,
-      type_arguments: [`${TEST_COINS_ACCOUNT}::test_coins::${coin.symbol}`],
+      type_arguments: [
+        `${TEST_COINS_ACCOUNT}::test_coins::${coin.symbol.toUpperCase()}`,
+      ],
       arguments: [(AMOUNT * 10 ** coin.decimals).toFixed(0)],
     };
     try {
