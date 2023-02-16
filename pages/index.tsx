@@ -61,11 +61,11 @@ function ConnectWalletModal() {
   return (
     <>
       {!connected ? (
-        <Button onClick={onOpen} mt="4">
+        <Button onClick={onOpen} mt="4" colorScheme={"whiteAlpha"}>
           Connect to claim 💡
         </Button>
       ) : (
-        <Button onClick={disconnect} mt="4">
+        <Button onClick={disconnect} mt="4" colorScheme={"whiteAlpha"}>
           {account?.address?.slice(0, 6) + "..." + account?.address?.slice(-4)}
         </Button>
       )}
@@ -165,7 +165,12 @@ function Claim({ coin }: { coin: CoinInfo }) {
   }
 
   return (
-    <Button isLoading={txnPending} disabled={!connected} onClick={claim}>
+    <Button
+      isLoading={txnPending}
+      disabled={!connected}
+      onClick={claim}
+      colorScheme="whiteAlpha"
+    >
       Claim {AMOUNT} {coin.symbol}
     </Button>
   );
