@@ -45,7 +45,9 @@ export default function Home() {
       </Head>
       <Container>
         <Flex align="center">
-          <Heading size="md">Thala Faucet: Claim MANY test coins</Heading>
+          <Heading color="white" fontSize="20px">
+            Thala Faucet: Claim MANY test coins
+          </Heading>
           <Spacer />
           <ConnectWalletModal />
         </Flex>
