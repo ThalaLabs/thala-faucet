@@ -45,7 +45,9 @@ export default function Home() {
       </Head>
       <Container>
         <Flex align="center">
-          <Heading size="md">Thala Faucet: Claim test coins</Heading>
+          <Heading color="white" fontSize="20px">
+            Thala Faucet: Claim test coins
+          </Heading>
           <Spacer />
           <ConnectWalletModal />
         </Flex>
@@ -128,7 +130,9 @@ function Claim({ coin }: { coin: CoinInfo }) {
     const payload: Types.TransactionPayload = {
       type: "entry_function_payload",
       function: `${TEST_COINS_ACCOUNT}::test_coins::mint_coin`,
-      type_arguments: [`${TEST_COINS_ACCOUNT}::test_coins::${coin.symbol.toUpperCase()}`],
+      type_arguments: [
+        `${TEST_COINS_ACCOUNT}::test_coins::${coin.symbol.toUpperCase()}`,
+      ],
       arguments: [(AMOUNT * 10 ** coin.decimals).toFixed(0)],
     };
     try {
