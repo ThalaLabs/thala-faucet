@@ -116,7 +116,7 @@ function ClaimCoins() {
 
   return (
     <Flex flexDirection={"column"} mt="10">
-      {coins.map((coin) => (
+      {coins.map((coin, index) => (
         <Claim key={coin.name} coin={coin} />
       ))}
     </Flex>
