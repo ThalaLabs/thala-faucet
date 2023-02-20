@@ -180,7 +180,7 @@ function Claim({ coin }: { coin: CoinInfo }) {
       Claim {AMOUNT} {coin.symbol}
       <Box ml={2}>
         <Image
-          src={`/${coin.symbol}.png`}
+          src={`/${coin.symbol.toLowerCase()}.png`}
           alt="coin-logo"
           width={20}
           height={20}
