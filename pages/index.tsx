@@ -1,6 +1,11 @@
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { AptosClient, Types } from "aptos";
+import { useEffect, useState } from "react";
+import Head from "next/head";
+import NextLink from "next/link";
+import Image from "next/image";
 import {
+  Box,
   Button,
   Container,
   Flex,
@@ -17,10 +22,7 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import Head from "next/head";
-import NextLink from "next/link";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { useEffect, useState } from "react";
 
 const TEST_COINS_ACCOUNT =
   "0x03c27315fb69ba6e4b960f1507d1cefcc9a4247869f26a8d59d6b7869d23782c";
@@ -114,7 +116,7 @@ function ClaimCoins() {
 
   return (
     <Flex flexDirection={"column"} mt="10">
-      {coins.map((coin) => (
+      {coins.map((coin, index) => (
         <Claim key={coin.name} coin={coin} />
       ))}
     </Flex>
@@ -176,6 +178,15 @@ function Claim({ coin }: { coin: CoinInfo }) {
       colorScheme="whiteAlpha"
     >
       Claim {AMOUNT} {coin.symbol}
+      <Box ml={2}>
+        <Image
+          src={`/${coin.symbol.toLowerCase()}.png`}
+          alt="coin-logo"
+          width={20}
+          height={20}
+          className="block sm:hidden"
+        />
+      </Box>
     </Button>
   );
 }
