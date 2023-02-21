@@ -26,7 +26,7 @@
     "aptos": "^1.6.0",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
-    "framer-motion": "^6",
+    "framer-motion": "^9",
     "next": "13.1.6",
     "petra-plugin-wallet-adapter": "^0.1.2",
     "react": "18.2.0",
