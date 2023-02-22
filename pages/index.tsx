@@ -1,6 +1,7 @@
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { AptosClient, Types } from "aptos";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import NextLink from "next/link";
 import Image from "next/image";
@@ -9,6 +10,8 @@ import {
   Button,
   Container,
   Flex,
+  Grid,
+  GridItem,
   Heading,
   Link,
   Modal,
@@ -37,6 +40,12 @@ interface CoinInfo {
 }
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    return () => router.push("https://www.thala.dev/faucet");
+  }, []);
+
   return (
     <>
       <Head>
@@ -177,16 +186,20 @@ function Claim({ coin }: { coin: CoinInfo }) {
       onClick={claim}
       colorScheme="whiteAlpha"
     >
-      Claim {AMOUNT} {coin.symbol}
-      <Box ml={2}>
-        <Image
-          src={`/${coin.symbol.toLowerCase()}.png`}
-          alt="coin-logo"
-          width={20}
-          height={20}
-          className="block sm:hidden"
-        />
-      </Box>
+      <Grid templateColumns="repeat(12, 1fr)">
+        <GridItem colStart={5} colEnd={8} h="100%" display="flex">
+          <Image
+            src={`/assets/logos/${coin.symbol.toLowerCase()}.png`}
+            alt="coin-logo"
+            width={20}
+            height={20}
+            className="block sm:hidden"
+          />
+          <Box ml="2">
+            Claim {AMOUNT} {coin.symbol}
+          </Box>
+        </GridItem>
+      </Grid>
     </Button>
   );
 }
