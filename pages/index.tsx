@@ -9,6 +9,8 @@ import {
   Button,
   Container,
   Flex,
+  Grid,
+  GridItem,
   Heading,
   Link,
   Modal,
@@ -177,16 +179,20 @@ function Claim({ coin }: { coin: CoinInfo }) {
       onClick={claim}
       colorScheme="whiteAlpha"
     >
-      Claim {AMOUNT} {coin.symbol}
-      <Box ml={2}>
-        <Image
-          src={`/${coin.symbol.toLowerCase()}.png`}
-          alt="coin-logo"
-          width={20}
-          height={20}
-          className="block sm:hidden"
-        />
-      </Box>
+      <Grid templateColumns="repeat(12, 1fr)">
+        <GridItem colStart={5} colEnd={8} h="100%" display="flex">
+          <Image
+            src={`/${coin.symbol.toLowerCase()}.png`}
+            alt="coin-logo"
+            width={20}
+            height={20}
+            className="block sm:hidden"
+          />
+          <Box ml="2">
+            Claim {AMOUNT} {coin.symbol}
+          </Box>
+        </GridItem>
+      </Grid>
     </Button>
   );
 }
