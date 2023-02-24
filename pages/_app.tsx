@@ -20,9 +20,6 @@ export default function App({ Component, pageProps }: AppProps) {
           new PetraWallet(),
           new PontemWallet(),
           new MartianWallet(),
-          new RiseWallet(),
-          new TrustWallet(),
-          new SpikaWallet(),
         ]}
         autoConnect={true}
       >
