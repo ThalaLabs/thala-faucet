@@ -18,7 +18,7 @@
     "@pontem/wallet-adapter-plugin": "^0.1.4",
     "@rise-wallet/wallet-adapter": "^0.1.2",
     "@spika/aptos-plugin": "^0.1.2",
-    "@trustwallet/aptos-wallet-adapter": "^0.1.4",
+    "@trustwallet/aptos-wallet-adapter": "^0.1.6",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
