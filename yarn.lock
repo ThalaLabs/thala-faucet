@@ -1265,10 +1265,10 @@
   dependencies:
     tslib "^2.4.0"
 
-"@trustwallet/aptos-wallet-adapter@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@trustwallet/aptos-wallet-adapter/-/aptos-wallet-adapter-0.1.4.tgz#fe92675465fdc6c1096e01a48230d9ccaa09d98e"
-  integrity sha512-n33/V60qqZo7lBtkQuilqvQQeGIOEnqcceyKOb9LsvNclH1wubw2ea6LrvmXBI4/MbNrVxY9LKGhvUYDwOSKTw==
+"@trustwallet/aptos-wallet-adapter@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@trustwallet/aptos-wallet-adapter/-/aptos-wallet-adapter-0.1.6.tgz#cbe16bb01fd9f6d75f286a0b3f584f692affe50f"
+  integrity sha512-vlu5JuxqMpGMLanayNKQpTC87zn4NMRo3k96iVI+IdwEeyIgiJbbFq+XqUAezzQG/U88u4jv3vK2x7cbPnNFIw==
   dependencies:
     "@aptos-labs/wallet-adapter-core" "0.1.7"
     aptos "^1.4.0"
